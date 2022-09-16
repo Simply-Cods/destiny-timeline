@@ -1,36 +1,43 @@
 import React from "react";
-import {VerticalTimelineElement} from 'react-vertical-timeline-component'
+import {
+  TimelineItem,
+  TimelineSeparator,
+  TimelineDot,
+  TimelineConnector,
+  TimelineContent,
+} from '@mui/lab'
 import * as styles from './TimelineElement.module.scss'
-import clsx from 'clsx';
+import { TimelineData, Season } from "./TimelineRenderer";
 
 export interface TimelineElementProps {
-    time: string,
-    title: string,
-    subtitle: string,
-    seasonAdded: number,
-    sources: string[],
+    timelineData: TimelineData;
+    seasons: Season[]
 }
 
-export default function TimelineElement(props: TimelineElementProps){
-    const sources = props.sources.map(source => {
-        const bookLowercase = source.split('#')[1].replace('-', ' ')
-        const book = bookLowercase.split(' ').map(str => str[0].toUpperCase() + str.substring(1)).join(' ');
-        return (
-          <li>
-            <a href={source}>{book}</a>
-          </li>
-        )
-      });
-
+export default function TimelineElement(props: TimelineElementProps) {
+  const sources = props.timelineData.sources.map(source => {
+    const bookLowercase = source.split('#')[1].replace('-', ' ')
+    const book = bookLowercase.split(' ').map(str => str[0].toUpperCase() + str.substring(1)).join(' ');
     return (
-        <VerticalTimelineElement
-            date={props.time}
-            iconClassName={props.title === "" ? styles.iconMinor : styles.iconMajor}
-            
-        >
-            {props.title !== "" && <h1>{props.title}</h1>}
-            {props.subtitle !== "" && <p>{props.subtitle}</p>}
-            {sources && sources}
-        </VerticalTimelineElement>
+      <li>
+        <a href={source}>{book}</a>
+      </li>
     )
+  });
+
+  return (
+    <TimelineItem>
+      <TimelineSeparator>
+        <TimelineDot color="grey" />
+        <TimelineConnector />
+      </TimelineSeparator>
+      <TimelineContent>
+        {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
+        {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
+        <ul>
+          {sources && sources}
+        </ul>
+      </TimelineContent>
+    </TimelineItem>
+  )
 }
