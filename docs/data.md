@@ -48,4 +48,4 @@
 ## Format explanation
 * number - number of the season / expansion (0 is D1) (please increment)
 * title - string title of the season / expansion
-* icon - path to the icon to be displayed (relative to src/images)
+* icon - path to the icon to be displayed (relative to src/images/seasons)

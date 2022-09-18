@@ -102,7 +102,7 @@ async function generate() {
     }
     
     async function generateSeasonIcons() {
-        const seasonIconsDir = `${__dirname}/src/images`
+        const seasonIconsDir = `${__dirname}/src/images/seasons`
         const seasonsDir = `${genDir}/seasons`
         await mkdir(seasonsDir);
         const seasonIconImport = `import React from 'react'\nimport { StaticImage } from 'gatsby-plugin-image'\n\n`
