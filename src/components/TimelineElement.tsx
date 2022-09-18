@@ -38,6 +38,9 @@ export default function TimelineElement(props: TimelineElementProps) {
             <SmartSelector season={props.timelineData.seasonAdded} className={styles.season}/>
             {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
             {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
+            <ul>
+              {sources}
+            </ul>
           </>
         </div>
       </TimelineContent>
