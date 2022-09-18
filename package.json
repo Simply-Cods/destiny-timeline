@@ -8,13 +8,14 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "concurrently \"gatsby develop\" \"yarn typed-scss-modules src\"",
+    "develop": "yarn generateImages && concurrently \"gatsby develop\" \"yarn typed-scss-modules src\"",
     "start": "yarn develop",
-    "build": "gatsby build",
+    "build": "yarn generateImages && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "spellcheck": "yarn cspell **"
+    "spellcheck": "yarn cspell **",
+    "generateImages": "node image-generator.js"
   },
   "dependencies": {
     "@babel/core": "^7.19.1",
