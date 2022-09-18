@@ -1,0 +1,122 @@
+[
+    {
+        "number": 0,
+        "title": "Destiny",
+        "icon": "destiny.png"
+    },
+    {
+        "number": 1,
+        "title": "The Dark Below",
+        "icon": "crota.png"
+    },
+    {
+        "number": 2,
+        "title": "House of Wolves",
+        "icon": "houseofwolves.png"
+    },
+    {
+        "number": 3,
+        "title": "The Taken King",
+        "icon": "takenking.png"
+    },
+    {
+        "number": 4,
+        "title": "Rise of Iron",
+        "icon": "riseofiron.png"
+    },
+    {
+        "number": 5,
+        "title": "Age of Triumph",
+        "icon": "triumph.png"
+    },
+    {
+        "number": 6,
+        "title": "Destiny 2",
+        "icon": "d2.png"
+    },
+    {
+        "number": 7,
+        "title": "Curse Of Osiris",
+        "icon": "curseosiris.png"
+    },
+    {
+        "number": 8,
+        "title": "Warmind",
+        "icon": "resurgence.png"
+    },
+    {
+        "number": 9,
+        "title": "Forsaken",
+        "icon": "forsaken.png"
+    },
+    {
+        "number": 10,
+        "title": "Season of the Forge",
+        "icon": "forge.png"
+    },
+    {
+        "number": 11,
+        "title": "Season of the Drifter",
+        "icon": "drifter.png"
+    },
+    {
+        "number": 12,
+        "title": "Season of Opulence",
+        "icon": "opulence.png"
+    },
+    {
+        "number": 13,
+        "title": "Shadowkeep",
+        "icon": "shadowkeep.png"
+    },
+    {
+        "number": 14,
+        "title": "Season of Dawn",
+        "icon": "seasondawn.png"
+    },
+    {
+        "number": 15,
+        "title": "Season of the Worthy",
+        "icon": "worthy.png"
+    },
+    {
+        "number": 16,
+        "title": "Season of Arrivals",
+        "icon": "arrivals.png"
+    },
+    {
+        "number": 17,
+        "title": "Beyond Light",
+        "icon": "beyond.png"
+    },
+    {
+        "number": 18,
+        "title": "Season of the Chosen",
+        "icon": "chosen.png"
+    },
+    {
+        "number": 19,
+        "title": "Season of the Splicer",
+        "icon": "splicer.png"
+    },
+    {
+        "number": 20,
+        "title": "Season of the Lost",
+        "icon": "lost.png"
+    },
+    {
+        "number": 21,
+        "title": "The Witch Queen",
+        "icon": "savathun.png"
+    },
+    {
+        "number": 22,
+        "title": "Season of the Haunted",
+        "icon": "haunted.png"
+    },
+    {
+        "number": 23,
+        "title": "Season of Plunder",
+        "icon": "plunder.png"
+    }
+]
