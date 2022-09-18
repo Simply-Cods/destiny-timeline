@@ -12,6 +12,19 @@
     }
 }
 
-.content {
-    margin: 0;
+// .content::before {
+//     content: url('https://github.com/Simply-Cods/destiny-timeline/blob/main/src/images/takenking.svg');
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     // border-top: 13px solid #7a0000;
+//     // border-right: 13px solid transparent;
+//     z-index: 1;
+//     width: auto;
+//     height: auto;
+// }
+
+.season {
+    max-width: 50px !important;
+    max-height: 50px !important;
 }

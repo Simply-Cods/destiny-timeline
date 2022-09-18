@@ -9,6 +9,7 @@ import {
 import * as styles from './TimelineElement.module.scss'
 import { TimelineData, Season } from "./TimelineRenderer";
 import { getLoreString } from "../helpers";
+import { SmartSelector } from "./image-gen";
 
 export interface TimelineElementProps {
     timelineData: TimelineData;
@@ -25,26 +26,20 @@ export default function TimelineElement(props: TimelineElementProps) {
     )
   });
 
-  const imagePath = props.seasons[props.timelineData.seasonAdded].icon;
-
-  const style = `.${styles.content}::after {
-    content: url("https://github.com/Simply-Cods/destiny-timeline/tree/main/src/images/${imagePath}");
-  }`
-
-  const html = {
-    __html: style
-  }
-
   return (
     <TimelineItem>
       <TimelineSeparator>
         <TimelineDot color="grey" />
         <TimelineConnector />
       </TimelineSeparator>
-      <style dangerouslySetInnerHTML={html}/>
-      <TimelineContent className={styles.content}>
-        {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
-        {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
+      <TimelineContent>
+        <div>
+          <>
+            <SmartSelector season={props.timelineData.seasonAdded} className={styles.season}/>
+            {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
+            {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
+          </>
+        </div>
       </TimelineContent>
     </TimelineItem>
   )
