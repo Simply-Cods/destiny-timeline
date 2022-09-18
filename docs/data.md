@@ -7,6 +7,7 @@
     "subtitle": "",
     "seasonAdded": 0,
     "timelineIndex": 0,
+    "indexOverride": -1,
     "sources": [
         ""
     ]
@@ -18,6 +19,7 @@
 * subtitle - description string to be shown on the timeline (optional)
 * seasonAdded - index of the season the data was added (default is 0) ([See seasons.json](#seasonsjson)) 
 * timelineIndex - the timeline this item needs to be placed on (default is 0) ([See timelinesDefinition.json](#timelinesdefinitionjson))
+* indexOverride - used on elements not placed on the default timeline to override their position
 * sources - an array of links to Ishtar Collective that are considered proof of this entry (optional)
 
 # timelinesDefinition.json

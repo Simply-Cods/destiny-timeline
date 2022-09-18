@@ -13,16 +13,23 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "spellcheck": "yarn cspell **"
   },
   "dependencies": {
+    "@babel/core": "^7.19.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/lab": "^5.0.0-alpha.99",
     "@mui/material": "^5.10.5",
     "clsx": "^1.2.1",
     "gatsby": "^4.23.0",
+    "gatsby-plugin-image": "^2.23.0",
     "gatsby-plugin-sass": "^5.23.0",
+    "gatsby-plugin-sharp": "^4.23.0",
+    "gatsby-source-filesystem": "^4.23.0",
+    "gatsby-transformer-json": "^4.23.0",
+    "gatsby-transformer-sharp": "^4.23.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sass": "^1.54.9"
@@ -32,6 +39,7 @@
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
     "concurrently": "^7.4.0",
+    "cspell": "^6.9.1",
     "typed-scss-modules": "^6.6.0",
     "typescript": "^4.8.3"
   }

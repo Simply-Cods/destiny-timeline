@@ -1,0 +1,33 @@
+.dot {
+    border-radius: 0%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.element::before {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.element {
+    height: 100%;
+    width: 100%;
+}
+
+.connector-no-time {
+    margin-left: 5px;
+}
+
+.text {
+    position: relative;
+    margin: 0;
+    margin-left: 10px;
+    width: 150px;
+    top: -0.5rem;
+}
+
+.content {
+    padding: 0;
+}

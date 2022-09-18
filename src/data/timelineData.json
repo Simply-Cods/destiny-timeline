@@ -4,7 +4,9 @@
         "title": "THE FLOWER GAME",
         "subtitle": "The Gardener and Winnower cycle the pattern",
         "seasonAdded": 16,
+        "index": 0,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
         ]
@@ -15,6 +17,7 @@
         "subtitle": "The universe is born and the Gardener and Winnower enter it as Paracausal entities",
         "seasonAdded": 16,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/entries/the-first-knife#book-unveiling"
         ]
@@ -25,6 +28,7 @@
         "subtitle": "Someone or something must have placed this here",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/v-needle-and-worm#books-of-sorrow"
         ]
@@ -35,6 +39,7 @@
         "subtitle": "",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/calcified-fragments-curiosity#books-of-sorrow"
         ]
@@ -45,6 +50,7 @@
         "subtitle": "Helium Drinkers overthrow the Osmium Court",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/ii-the-hateful-verse#books-of-sorrow"
         ]
@@ -55,6 +61,7 @@
         "subtitle": "Osmium Sisters make Pact with Worm Gods",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/ix-the-bargain#books-of-sorrow",
             "https://www.ishtar-collective.net/cards/x-immortals#books-of-sorrow"
@@ -66,6 +73,7 @@
         "subtitle": "The Osmium Court ingest Worm God larvae and become the Hive. They conquer Fundament",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xi-conquerors#books-of-sorrow"
         ]
@@ -76,6 +84,7 @@
         "subtitle": "The Syzygy - The Traveller abandons Fundament",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xix-crusaders#books-of-sorrow"
         ]
@@ -86,6 +95,7 @@
         "subtitle": "The Hive conquer untold worlds",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xx-hive#books-of-sorrow",
             "https://www.ishtar-collective.net/cards/xxii-the-high-war#books-of-sorrow"
@@ -97,6 +107,7 @@
         "subtitle": "The Ecumene wage war on the Hive. The Hive are loosing",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xxv-dictata-ir-dakaua#books-of-sorrow"
         ]
@@ -107,6 +118,7 @@
         "subtitle": "Oryx slays Akka and communes with the Witness. Obtains the Tablets of Ruin and the ability to Take",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xxviii-king-of-shapes#books-of-sorrow"
         ]
@@ -117,6 +129,7 @@
         "subtitle": "The Ecumene become extinct - through war Oryx rebirths Xivu Arath, and through cunning rebirths Savathun",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xxvii-eat-the-sky#books-of-sorrow",
             "https://www.ishtar-collective.net/cards/xxix-carved-in-ruin#books-of-sorrow"
@@ -128,6 +141,7 @@
         "subtitle": "Quria created, Crota banished",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xxxviii-the-partition-of-death#books-of-sorrow",
             "https://www.ishtar-collective.net/cards/xxxix-open-your-eye-go-into-it#books-of-sorrow",
@@ -137,9 +151,10 @@
     {
         "time": "",
         "title": "",
-        "subtitle": "Eversion Day - the Drednaught created",
+        "subtitle": "Eversion Day - the Dreadnought created",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xli-dreadnaught#books-of-sorrow"
         ]
@@ -150,6 +165,7 @@
         "subtitle": "Quria, Blade Transform Taken and gifted to Savathun",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
             "https://www.ishtar-collective.net/cards/xliii-end-of-failed-timeline#books-of-sorrow",
             "https://www.ishtar-collective.net/cards/xliv-strict-proof-eternal#books-of-sorrow"
@@ -161,6 +177,7 @@
         "subtitle": "Oryx, Savathun, and Xivu Arath part ways",
         "seasonAdded": 3,
         "timelineIndex": 0,
+        "indexOverride": -1,
         "sources": [
         ]
     }

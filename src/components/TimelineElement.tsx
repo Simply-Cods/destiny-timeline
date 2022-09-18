@@ -8,6 +8,7 @@ import {
 } from '@mui/lab'
 import * as styles from './TimelineElement.module.scss'
 import { TimelineData, Season } from "./TimelineRenderer";
+import { getLoreString } from "../helpers";
 
 export interface TimelineElementProps {
     timelineData: TimelineData;
@@ -15,15 +16,24 @@ export interface TimelineElementProps {
 }
 
 export default function TimelineElement(props: TimelineElementProps) {
-  const sources = props.timelineData.sources.map(source => {
-    const bookLowercase = source.split('#')[1].replace('-', ' ')
-    const book = bookLowercase.split(' ').map(str => str[0].toUpperCase() + str.substring(1)).join(' ');
+  const sources = props.timelineData.sources.map((source, i) => {
+    const book = getLoreString(source);
     return (
-      <li>
+      <li key={i}>
         <a href={source}>{book}</a>
       </li>
     )
   });
+
+  const imagePath = props.seasons[props.timelineData.seasonAdded].icon;
+
+  const style = `.${styles.content}::after {
+    content: url("https://github.com/Simply-Cods/destiny-timeline/tree/main/src/images/${imagePath}");
+  }`
+
+  const html = {
+    __html: style
+  }
 
   return (
     <TimelineItem>
@@ -31,12 +41,10 @@ export default function TimelineElement(props: TimelineElementProps) {
         <TimelineDot color="grey" />
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent>
+      <style dangerouslySetInnerHTML={html}/>
+      <TimelineContent className={styles.content}>
         {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
         {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
-        <ul>
-          {sources && sources}
-        </ul>
       </TimelineContent>
     </TimelineItem>
   )
