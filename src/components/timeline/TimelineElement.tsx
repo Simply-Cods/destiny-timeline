@@ -38,7 +38,6 @@ export default function TimelineElement(props: TimelineElementProps) {
             <SeasonIcon 
               season={props.timelineData.seasonAdded} 
               className={styles.season} 
-              placeholder="tracedSVG" 
             />
             {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
             {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
