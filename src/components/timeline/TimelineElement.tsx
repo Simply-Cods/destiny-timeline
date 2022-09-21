@@ -8,8 +8,8 @@ import {
 } from '@mui/lab'
 import * as styles from './TimelineElement.module.scss'
 import { TimelineData, Season } from "./TimelineRenderer";
-import { getLoreString } from "../helpers";
-import { SeasonIcon } from "./image-gen";
+import { getLoreString } from "../../helpers";
+import { SeasonIcon } from "../image-gen";
 
 export interface TimelineElementProps {
     timelineData: TimelineData;
@@ -35,7 +35,11 @@ export default function TimelineElement(props: TimelineElementProps) {
       <TimelineContent>
         <div>
           <>
-            <SeasonIcon season={props.timelineData.seasonAdded} className={styles.season}/>
+            <SeasonIcon 
+              season={props.timelineData.seasonAdded} 
+              className={styles.season} 
+              placeholder="tracedSVG" 
+            />
             {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
             {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
             <ul>
