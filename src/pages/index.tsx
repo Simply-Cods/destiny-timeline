@@ -4,15 +4,19 @@ import timelineData from '../data/timelineData.json';
 import seasons from '../data/seasons.json';
 import timelines from '../data/timelinesDefinition.json'
 import './index.scss'
-import TimelineRenderer from "../components/TimelineRenderer";
+import TimelineRenderer from "../components/timeline/TimelineRenderer";
+import Header from "../components/Header";
 
 const IndexPage = () => {
   return(
-    <TimelineRenderer 
-        seasons={seasons}
-        timelineData={timelineData}
-        timelines={timelines}
-    />
+    <>
+      <Header />
+      <TimelineRenderer 
+          seasons={seasons}
+          timelineData={timelineData}
+          timelines={timelines}
+      />
+    </>
   )
 }
 
