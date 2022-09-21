@@ -19,12 +19,12 @@ async function generate() {
         const seasonIconsDir = `${__dirname}/src/images/seasons`
         const seasonsDir = `${genDir}/seasons`
         await mkdir(seasonsDir);
-        const seasonIconImport = `import React from 'react'\nimport { StaticImage } from 'gatsby-plugin-image'\n\n`
-        let seasonIconBody = `export interface SeasonIconProps {season: number; className: string}\nexport default function SeasonIcon(props: SeasonIconProps){\nlet selected: JSX.Element = <></>\nswitch(props.season){\n`
+        const seasonIconImport = `import React from 'react'\nimport {StaticImage} from 'gatsby-plugin-image'\nimport {IStaticImageProps} from 'gatsby-plugin-image/dist/src/components/static-image.server'\n\n`
+        let seasonIconBody = `export default function SeasonIcon({season,...props}:{season:number}&Omit<IStaticImageProps,"src"|"alt">){\nlet selected:JSX.Element=<></>\nswitch(season){\n`
 
         for(let i = 0; i< seasons.length; i++) {
             const season = seasons[i];
-            seasonIconBody += `case ${season.number}:\nselected= <StaticImage src="${seasonIconsDir}/${season.icon}" alt="${season.title}" className={props.className}/>\nbreak;\n`
+            seasonIconBody += `case ${season.number}:\nselected=<StaticImage src="${seasonIconsDir}/${season.icon}" alt="${season.title}" {...props}/>\nbreak;\n`
         }
         seasonIconBody += "}\nreturn selected\n}"
 
