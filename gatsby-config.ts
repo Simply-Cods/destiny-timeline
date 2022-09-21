@@ -17,7 +17,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          placeholder: 'trasedSVG',
+          placeholder: 'tracedSVG',
           backgroundColor: 'transparent',
         },
       },
