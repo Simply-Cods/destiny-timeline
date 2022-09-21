@@ -20,7 +20,7 @@ async function generate() {
         const seasonsDir = `${genDir}/seasons`
         await mkdir(seasonsDir);
         const seasonIconImport = `import React from 'react'\nimport {StaticImage} from 'gatsby-plugin-image'\nimport {IStaticImageProps} from 'gatsby-plugin-image/dist/src/components/static-image.server'\n\n`
-        let seasonIconBody = `export default function SeasonIcon({season,...props}:{season:number}&Omit<IStaticImageProps,"src"|"alt">){\nlet selected:JSX.Element=<></>\nswitch(season){\n`
+        let seasonIconBody = `export default function SeasonIcon({season,...props}:{season:number}&Omit<IStaticImageProps,"src"|"alt"|"children">){\nlet selected:JSX.Element=<></>\nswitch(season){\n`
 
         for(let i = 0; i< seasons.length; i++) {
             const season = seasons[i];
