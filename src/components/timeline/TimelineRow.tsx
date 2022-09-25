@@ -3,6 +3,7 @@ import React from "react";
 import TimeElement from "./TimeElement";
 import TimelineElement from "./TimelineElement";
 import { Season, TimelineData } from "./TimelineRenderer";
+import * as styles from './TimelineRow.module.scss'
 
 export interface TimelineRowProps {
     seasons: Season[]
@@ -23,6 +24,7 @@ export default function TimelineRow(props: TimelineRowProps) {
         return (
             <Grid item
                 key={i}
+                className={styles.gridItem}
             >
                 <TimelineElement 
                     seasons={props.seasons}

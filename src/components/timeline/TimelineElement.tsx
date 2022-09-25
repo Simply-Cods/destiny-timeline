@@ -10,6 +10,8 @@ import * as styles from './TimelineElement.module.scss'
 import { TimelineData, Season } from "./TimelineRenderer";
 import { getLoreString } from "../../helpers";
 import SeasonIcon from "../image-gen/SeasonIcon";
+import { Grid } from "@mui/material";
+
 
 //import { SeasonIcon } from "../image-gen";
 
@@ -29,20 +31,30 @@ export default function TimelineElement(props: TimelineElementProps) {
   });
 
   return (
-    <TimelineItem>
+    <TimelineItem className={styles.element}>
       <TimelineSeparator>
-        <TimelineDot color="grey" />
+        <TimelineDot color="grey"/>
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent>
-        <div>
+      <TimelineContent className={styles.timelineContent}>
+        <div className={styles.timelineContentWrapper}>
           <>
-            <SeasonIcon 
+          <div>
+            {/* <SeasonIcon 
               season={props.timelineData.seasonAdded} 
               className={styles.season} 
-            />
-            {props.timelineData.title !== "" && <h1>{props.timelineData.title}</h1>}
-            {props.timelineData.subtitle !== "" && <p>{props.timelineData.subtitle}</p>}
+              as={"span"}
+            /> */}
+            {props.timelineData.title !== "" && <h1 className={styles.title}>
+              {props.timelineData.title}
+              <SeasonIcon 
+                season={props.timelineData.seasonAdded} 
+                className={styles.season} 
+                as={"span"}
+              />
+            </h1>}
+          </div>
+            {props.timelineData.subtitle !== "" && <p className={styles.subtitle}>{props.timelineData.subtitle}</p>}
             <ul>
               {sources}
             </ul>
