@@ -9,7 +9,9 @@ import {
 import * as styles from './TimelineElement.module.scss'
 import { TimelineData, Season } from "./TimelineRenderer";
 import { getLoreString } from "../../helpers";
-import { SeasonIcon } from "../image-gen";
+import SeasonIcon from "../image-gen/SeasonIcon";
+
+//import { SeasonIcon } from "../image-gen";
 
 export interface TimelineElementProps {
     timelineData: TimelineData;

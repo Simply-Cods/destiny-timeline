@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "yarn generateImages && concurrently \"gatsby develop\" \"yarn typed-scss-modules src\"",
+    "develop": "yarn generateImages && concurrently \"gatsby develop --verbose\" \"yarn typed-scss-modules src\"",
     "start": "yarn develop",
     "build": "yarn generateImages && gatsby build",
     "serve": "gatsby serve",

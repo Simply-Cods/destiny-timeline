@@ -1,9 +1,11 @@
 const fs = require('fs/promises');
-const fss = require('fs')
+const fss = require('fs');
+const path = require('node:path');
 const seasons = require('./src/data/seasons.json');
 
 async function generate() {
-    const genDir = `${__dirname}/src/components/image-gen`
+    //const genDir = `${__dirname}/src/components/image-gen`
+    const genDir = path.normalize(path.join(__dirname, 'src', 'components', 'image-gen'))
     await setupDir();
     let rootIndexImport = ""
     let rootIndexExport = ""
@@ -14,30 +16,72 @@ async function generate() {
     async function setupDir() {    
         await mkdir(genDir);
     }
-    
+
+
     async function generateSeasonIcons() {
-        const seasonIconsDir = `${__dirname}/src/images/seasons`
-        const seasonsDir = `${genDir}/seasons`
-        await mkdir(seasonsDir);
-        const seasonIconImport = `import React from 'react'\nimport {StaticImage} from 'gatsby-plugin-image'\nimport {IStaticImageProps} from 'gatsby-plugin-image/dist/src/components/static-image.server'\n\n`
-        let seasonIconBody = `export default function SeasonIcon({season,...props}:{season:number}&Omit<IStaticImageProps,"src"|"alt"|"children">){\nlet selected:JSX.Element=<></>\nswitch(season){\n`
+        const subDir = path.join(genDir, 'seasonIcons')
+        await mkdir(subDir);
 
-        for(let i = 0; i< seasons.length; i++) {
+        const file = path.join(genDir, 'SeasonIcon.tsx')
+
+        let imports = `import React from 'react'
+import { GatsbyImageProps } from 'gatsby-plugin-image'\n`
+
+        let body = `export default function SeasonIcon({ 
+    season, 
+    ...props 
+}: {
+    season: number
+} & Omit<GatsbyImageProps, 'image' | 'alt'>){
+    let selected = <></>
+    switch(season) {\n`
+
+        for(let i = 0; i < seasons.length; i++) {
             const season = seasons[i];
-            seasonIconBody += `case ${season.number}:\nselected=<StaticImage src="${seasonIconsDir}/${season.icon}" alt="${season.title}" {...props}/>\nbreak;\n`
+            const iconName = getNameFromFilePath(season.icon)
+            const subFile = path.join(subDir, `${iconName}.tsx`)
+
+            const subContent = `// Auto generated
+import React from 'react'
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage, getImage, GatsbyImageProps } from "gatsby-plugin-image"
+
+export default function ${iconName}(props: Omit<GatsbyImageProps, 'image' | 'alt'>) {
+    const data = useStaticQuery(graphql\`
+        query ${iconName}ImageQuery {
+            file(relativePath: {eq: "seasons/${season.icon}"}) {
+                childImageSharp {
+                    gatsbyImageData(transformOptions: {grayscale: true})
+                }
+            }
         }
-        seasonIconBody += "}\nreturn selected\n}"
+    \`)
+    const image = getImage(data.file)
+    return (
+        <>
+            {image && <GatsbyImage image={image} alt='${season.title}'{...props} />}
+        </>
+    )
+}`
+            
+            await write(subFile, subContent);
 
-        seasonIconContent = "// Auto generated\n" + seasonIconImport + seasonIconBody;
+            const relative = './' + path.relative(genDir, subFile)
 
-        const seasonIconElementDir = `${seasonsDir}/SeasonIcon.tsx`
+            imports += `import ${iconName} from '${fixPath(relative)}'\n`
 
-        await write(seasonIconElementDir, seasonIconContent)
-        const indexDir = `${seasonsDir}/index.ts`
-        const indexContent = "import SeasonIcon from './SeasonIcon'\nexport default SeasonIcon"
-        await write(indexDir, indexContent)
+            body += `\t\tcase ${season.number}:
+            selected = <${iconName} {...props} />
+            break\n`
+        }
 
-        rootIndexImport += "import SeasonIconImport from './seasons'\n"
+        body += `\t}
+    return selected
+}`
+        const content = '// Auto generated \n' + imports + "\n" + body;
+        await write(file, content)
+
+        rootIndexImport += "import SeasonIconImport from './SeasonIcon'\n"
         rootIndexExport += "export const SeasonIcon = SeasonIconImport\n"
     }
     
@@ -59,6 +103,18 @@ async function generate() {
         console.log(`Writing file ${path}`)
         await fs.writeFile(path, content);
         console.log('Success')
+    }
+
+    function fixPath(string) {
+        return string.replaceAll(/\\/g, "/").replace(/\.tsx$/, "")
+    }
+
+    function getNameFromFilePath(string) {
+        const paths = string.split('/');
+        const file = paths[paths.length - 1]
+        const name = file.split('.')[0]
+        const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+        return capitalized;
     }
 }
 
