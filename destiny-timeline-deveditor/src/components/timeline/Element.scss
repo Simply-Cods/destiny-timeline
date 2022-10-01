@@ -1,0 +1,17 @@
+.timeline-element{
+    border: 2px solid black;
+    padding: 5px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        * {
+            margin-bottom: 2px;
+        }
+        textarea {
+            max-width: fit-content;
+            min-width: fit-content;
+            height: 100px;
+        }
+    }
+}

@@ -10,6 +10,7 @@
   "scripts": {
     "develop": "yarn generateImages && concurrently \"gatsby develop --verbose\" \"yarn typed-scss-modules src\"",
     "start": "yarn develop",
+    "start:deveditor": "yarn --cwd \"./destiny-timeline-deveditor\" start",
     "build": "yarn generateImages && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

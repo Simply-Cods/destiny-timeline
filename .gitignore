@@ -1,6 +1,15 @@
 node_modules/
+
+## build destinations
+/public/
 .cache/
-public
+build/
+
+## auto generated
 src/gatsby-types.d.ts
-yarn-error.log
 src/components/image-gen
+
+## logs and temporary files
+*.log
+*.tmp
+

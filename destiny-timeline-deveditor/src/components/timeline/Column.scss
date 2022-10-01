@@ -1,0 +1,14 @@
+@use '../../vars' as *;
+
+.column--element-container{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+
+    @include vertical-space-children(5px);
+}
+
+.column--name {
+    text-align: center;
+    margin: 0;
+}

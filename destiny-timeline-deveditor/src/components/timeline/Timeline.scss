@@ -1,0 +1,8 @@
+@use '../../vars' as *;
+
+.timeline--columns-container {
+    display: flex;
+    flex-direction: row;
+    
+    @include horizontal-space-children(5px);
+}
