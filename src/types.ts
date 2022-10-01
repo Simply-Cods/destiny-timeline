@@ -6,8 +6,8 @@ export interface TimelineData {
     title: string;
     subtitle: string;
     seasonAdded: number;
-    timelineIndex: number;
-    indexOverride: number;
+    // timelineIndex: number;
+    // indexOverride: number;
     sources: string[];
     style: Style;
 }

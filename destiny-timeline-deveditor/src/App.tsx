@@ -1,10 +1,10 @@
 import React from 'react';
-import Timeline from './components/timeline/Timeline';
+import TimelineEditor from './components/timeline/TimelineEditor';
 
 
 function App() {
   return (
-    <Timeline />
+    <TimelineEditor />
   );
 }
 

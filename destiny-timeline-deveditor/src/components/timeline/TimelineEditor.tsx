@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Column from './Column';
 import { TimelineDefinition } from '../../../../src/types'
-import './Timeline.scss'
+import './TimelineEditor.scss'
+import Controls from './Controls';
 
 export default function Timeline() {
     const [data, setData] = useState<TimelineDefinition[]>([
@@ -14,8 +15,6 @@ export default function Timeline() {
                     title: "THE FLOWER GAME",
                     subtitle: "The Gardener and Winnower cycle the pattern",
                     seasonAdded: 16,
-                    timelineIndex: 0,
-                    indexOverride: -1,
                     style: "empty",
                     sources: [
                         "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -26,8 +25,6 @@ export default function Timeline() {
                   title: "THE FLOWER GAME",
                   subtitle: "The Gardener and Winnower cycle the pattern",
                   seasonAdded: 16,
-                  timelineIndex: 0,
-                  indexOverride: -1,
                   style: "major",
                   sources: [
                       "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -38,8 +35,6 @@ export default function Timeline() {
                   title: "THE FLOWER GAME",
                   subtitle: "The Gardener and Winnower cycle the pattern",
                   seasonAdded: 16,
-                  timelineIndex: 0,
-                  indexOverride: -1,
                   style: "empty",
                   sources: [
                       "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -56,8 +51,6 @@ export default function Timeline() {
                   title: "THE FLOWER GAME",
                   subtitle: "The Gardener and Winnower cycle the pattern",
                   seasonAdded: 16,
-                  timelineIndex: 0,
-                  indexOverride: -1,
                   style: "major",
                   sources: [
                       "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -68,8 +61,6 @@ export default function Timeline() {
                   title: "THE FLOWER GAME",
                   subtitle: "The Gardener and Winnower cycle the pattern",
                   seasonAdded: 16,
-                  timelineIndex: 0,
-                  indexOverride: -1,
                   style: "major",
                   sources: [
                       "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -80,8 +71,6 @@ export default function Timeline() {
                     title: "THE FLOWER GAME",
                     subtitle: "The Gardener and Winnower cycle the pattern",
                     seasonAdded: 16,
-                    timelineIndex: 0,
-                    indexOverride: -1,
                     style: "major",
                     sources: [
                         "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -98,8 +87,6 @@ export default function Timeline() {
                     title: "THE FLOWER GAME",
                     subtitle: "The Gardener and Winnower cycle the pattern",
                     seasonAdded: 16,
-                    timelineIndex: 0,
-                    indexOverride: -1,
                     style: "empty",
                     sources: [
                         "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -110,8 +97,6 @@ export default function Timeline() {
                   title: "THE FLOWER GAME",
                   subtitle: "The Gardener and Winnower cycle the pattern",
                   seasonAdded: 16,
-                  timelineIndex: 0,
-                  indexOverride: -1,
                   style: "major",
                   sources: [
                       "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -122,8 +107,6 @@ export default function Timeline() {
                   title: "THE FLOWER GAME",
                   subtitle: "The Gardener and Winnower cycle the pattern",
                   seasonAdded: 16,
-                  timelineIndex: 0,
-                  indexOverride: -1,
                   style: "major",
                   sources: [
                       "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
@@ -144,8 +127,12 @@ export default function Timeline() {
     })
 
     return (
-        <div className='timeline--columns-container'>
-            {rows}
-        </div>            
+        <div>
+            <Controls setData={setData}/>
+            <div className='timeline-editor--columns-container'>
+                {rows}
+            </div>  
+        </div>
+                  
     )
 }
