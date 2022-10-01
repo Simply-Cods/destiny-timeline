@@ -3,27 +3,11 @@ import { Grid } from "@mui/material";
 import TimelineRow from "./TimelineRow";
 import * as styles from './TimelineRenderer.module.scss'
 import { TimelineElementMetadata } from "./TimelineElement";
+import { TimelineData, TimelineDefinition } from "../../types";
 
 export interface TimelineRendererProps {
     timelineData: TimelineData[];
     timelines: TimelineDefinition[];
-}
-
-export interface TimelineData {
-    time: string;
-    title: string;
-    subtitle: string;
-    seasonAdded: number;
-    timelineIndex: number;
-    indexOverride: number;
-    sources: string[];
-    style: 'minor' | 'major';
-}
-
-export interface TimelineDefinition {
-    debugName: string;
-    index: number;
-    contentDirection: string;
 }
 
 export default function TimelineRenderer(props: TimelineRendererProps) {

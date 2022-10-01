@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from './TimelineElement.module.scss'
-import { TimelineData } from "./TimelineRenderer";
+import { TimelineData } from "../../types";
 import MajorTimelineElement from "./elements/MajorTimelineElement";
 import MinorTimelineElement from "./elements/MinorTimelineElement";
 

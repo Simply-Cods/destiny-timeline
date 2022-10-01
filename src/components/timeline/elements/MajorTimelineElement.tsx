@@ -6,7 +6,7 @@ import {
   TimelineConnector,
   TimelineContent,
 } from '@mui/lab'
-import { TimelineData } from "../TimelineRenderer";
+import { TimelineData } from "../../../types";
 import { getLoreString } from "../../../helpers";
 import SeasonIcon from "../../image-gen/SeasonIcon";
 import * as styles from './MajorTimelineElement.module.scss'

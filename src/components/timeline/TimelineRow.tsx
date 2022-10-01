@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import React from "react";
 import TimeElement from "./TimeElement";
 import TimelineElement, { TimelineElementMetadata } from "./TimelineElement";
-import { TimelineData } from "./TimelineRenderer";
+import { TimelineData } from "../../types";
 import * as styles from './TimelineRow.module.scss'
 
 export interface TimelineRowProps {
