@@ -4,6 +4,7 @@ node_modules/
 /public/
 .cache/
 build/
+dist/
 
 ## auto generated
 src/gatsby-types.d.ts
