@@ -1,6 +1,7 @@
 import express, {Request, Response, NextFunction} from "express";
 import dotenv from 'dotenv'
 import fs from 'fs/promises'
+import cors from 'cors'
 
 class HttpException extends Error {
     status: number;
@@ -15,6 +16,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 const dataPath = '../../src/data/'
+
+app.use(cors())
 
 app.use((req: Request, _res: Response, next: NextFunction) => {
     console.log(`📨 [destiny-timeline-deveditor-api]: ${req.hostname} > ${req.method} ${req.originalUrl}`)
