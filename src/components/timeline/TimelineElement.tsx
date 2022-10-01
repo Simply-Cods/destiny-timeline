@@ -1,66 +1,25 @@
 import React from "react";
-import {
-  TimelineItem,
-  TimelineSeparator,
-  TimelineDot,
-  TimelineConnector,
-  TimelineContent,
-} from '@mui/lab'
 import * as styles from './TimelineElement.module.scss'
-import { TimelineData, Season } from "./TimelineRenderer";
-import { getLoreString } from "../../helpers";
-import SeasonIcon from "../image-gen/SeasonIcon";
-import { Grid } from "@mui/material";
+import { TimelineData } from "./TimelineRenderer";
+import MajorTimelineElement from "./elements/MajorTimelineElement";
+import MinorTimelineElement from "./elements/MinorTimelineElement";
 
-
-//import { SeasonIcon } from "../image-gen";
-
-export interface TimelineElementProps {
-    timelineData: TimelineData;
-    seasons: Season[]
+export interface TimelineElementMetadata {
+  nextMajor: boolean;
 }
 
-export default function TimelineElement(props: TimelineElementProps) {
-  const sources = props.timelineData.sources.map((source, i) => {
-    const book = getLoreString(source);
-    return (
-      <li key={i}>
-        <a href={source}>{book}</a>
-      </li>
-    )
-  });
+export default function TimelineElement({data, meta}: {data: TimelineData; meta:TimelineElementMetadata}) {
 
-  return (
-    <TimelineItem className={styles.element}>
-      <TimelineSeparator>
-        <TimelineDot color="grey"/>
-        <TimelineConnector />
-      </TimelineSeparator>
-      <TimelineContent className={styles.timelineContent}>
-        <div className={styles.timelineContentWrapper}>
-          <>
-          <div>
-            {/* <SeasonIcon 
-              season={props.timelineData.seasonAdded} 
-              className={styles.season} 
-              as={"span"}
-            /> */}
-            {props.timelineData.title !== "" && <h1 className={styles.title}>
-              {props.timelineData.title}
-              <SeasonIcon 
-                season={props.timelineData.seasonAdded} 
-                className={styles.season} 
-                as={"span"}
-              />
-            </h1>}
-          </div>
-            {props.timelineData.subtitle !== "" && <p className={styles.subtitle}>{props.timelineData.subtitle}</p>}
-            <ul>
-              {sources}
-            </ul>
-          </>
-        </div>
-      </TimelineContent>
-    </TimelineItem>
-  )
+  let element: JSX.Element
+
+  switch(data.style) {
+    case "major": 
+      element = <MajorTimelineElement data={data} meta={meta} />
+      break;
+    case 'minor':
+      element = <MinorTimelineElement data={data} meta={meta}/>
+      break;
+  }
+
+  return element
 }

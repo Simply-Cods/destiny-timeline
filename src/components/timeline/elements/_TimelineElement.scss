@@ -1,0 +1,28 @@
+$season-icon-size: 25px;
+
+.season-icon {
+    width: $season-icon-size;
+    height: $season-icon-size;
+    margin-top: 0.6rem;
+    margin-left: 5px;
+}
+
+.timeline-content {
+    width: 400px;
+    padding: 0;
+    padding-bottom: 15px;
+}
+
+.timeline-element::before {
+    padding: 0;
+    flex: 0 0;
+}
+
+.connector {
+    flex-grow: 0;
+    height: 70%;
+}
+
+.connector-next-major {
+    height: 80% !important;
+}

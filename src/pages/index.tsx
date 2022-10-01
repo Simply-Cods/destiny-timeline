@@ -1,7 +1,6 @@
 import React from "react"
 import type { HeadFC } from "gatsby"
 import timelineData from '../data/timelineData.json';
-import seasons from '../data/seasons.json';
 import timelines from '../data/timelinesDefinition.json'
 import './index.scss'
 import TimelineRenderer from "../components/timeline/TimelineRenderer";
@@ -12,7 +11,6 @@ const IndexPage = () => {
     <>
       <Header />
       <TimelineRenderer 
-          seasons={seasons}
           timelineData={timelineData}
           timelines={timelines}
       />

@@ -1,14 +1,14 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import TimeElement from "./TimeElement";
-import TimelineElement from "./TimelineElement";
-import { Season, TimelineData } from "./TimelineRenderer";
+import TimelineElement, { TimelineElementMetadata } from "./TimelineElement";
+import { TimelineData } from "./TimelineRenderer";
 import * as styles from './TimelineRow.module.scss'
 
 export interface TimelineRowProps {
-    seasons: Season[]
     spacing: number
     data: TimelineData[]
+    meta: TimelineElementMetadata[]
 }
 
 export default function TimelineRow(props: TimelineRowProps) {
@@ -27,8 +27,8 @@ export default function TimelineRow(props: TimelineRowProps) {
                 className={styles.gridItem}
             >
                 <TimelineElement 
-                    seasons={props.seasons}
-                    timelineData={item}
+                    data={item}
+                    meta={props.meta[i]}
                 />
             </Grid>
             
@@ -41,7 +41,7 @@ export default function TimelineRow(props: TimelineRowProps) {
             spacing={props.spacing}
             columns={props.data.length + 1}
         >
-            <Grid item>
+            <Grid item className={styles.gridItem}>
                 <TimeElement time={time}/>
             </Grid>
             {items}

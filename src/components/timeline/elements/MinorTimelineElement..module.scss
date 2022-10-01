@@ -1,0 +1,15 @@
+@import './TimelineElement';
+
+.dot {
+    border-radius: 0% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+}
+
+.subtitle {
+    margin: 0;
+    margin-left: 1rem;
+    position: relative;
+    top: -0.5rem;
+}

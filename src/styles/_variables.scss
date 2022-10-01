@@ -1,0 +1,9 @@
+$season-icon-size: 25px;
+$timeline-element-width: 450px;
+
+.season-icon {
+    width: $season-icon-size;
+    height: $season-icon-size;
+    margin-top: 0.5rem;
+    margin-left: 5px;
+}
