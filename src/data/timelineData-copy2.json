@@ -12,26 +12,26 @@
                 "sources": [
                     "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
                 ]
-              },
-            {
-              "time": "Before time itself",
-              "title": "THE FLOWER GAME",
-              "subtitle": "The Gardener and Winnower cycle the pattern",
-              "seasonAdded": 16,
-              "style": "major",
-              "sources": [
-                  "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-              ]
             },
             {
-              "time": "Before time itself",
-              "title": "THE FLOWER GAME",
-              "subtitle": "The Gardener and Winnower cycle the pattern",
-              "seasonAdded": 16,
-              "style": "empty",
-              "sources": [
-                  "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-              ]
+                "time": "Before time itself",
+                "title": "THE FLOWER GAME",
+                "subtitle": "The Gardener and Winnower cycle the pattern",
+                "seasonAdded": 16,
+                "style": "major",
+                "sources": [
+                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                ]
+            },
+            {
+                "time": "Before time itself",
+                "title": "THE FLOWER GAME",
+                "subtitle": "The Gardener and Winnower cycle the pattern",
+                "seasonAdded": 16,
+                "style": "empty",
+                "sources": [
+                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                ]
             }
         ]
     },
@@ -40,24 +40,24 @@
         "debugName": "default",
         "children": [
             {
-              "time": "Before time itself",
-              "title": "THE FLOWER GAME",
-              "subtitle": "The Gardener and Winnower cycle the pattern",
-              "seasonAdded": 16,
-              "style": "major",
-              "sources": [
-                  "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-              ]
+                "time": "Before time itself",
+                "title": "THE FLOWER GAME",
+                "subtitle": "The Gardener and Winnower cycle the pattern",
+                "seasonAdded": 16,
+                "style": "major",
+                "sources": [
+                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                ]
             },
             {
-              "time": "Before time itself",
-              "title": "THE FLOWER GAME",
-              "subtitle": "The Gardener and Winnower cycle the pattern",
-              "seasonAdded": 16,
-              "style": "major",
-              "sources": [
-                  "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-              ]
+                "time": "Before time itself",
+                "title": "THE FLOWER GAME",
+                "subtitle": "The Gardener and Winnower cycle the pattern",
+                "seasonAdded": 16,
+                "style": "major",
+                "sources": [
+                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                ]
             },
             {
                 "time": "Before time itself",
@@ -84,26 +84,26 @@
                 "sources": [
                     "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
                 ]
-              },
-            {
-              "time": "Before time itself",
-              "title": "THE FLOWER GAME",
-              "subtitle": "The Gardener and Winnower cycle the pattern",
-              "seasonAdded": 16,
-              "style": "major",
-              "sources": [
-                  "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-              ]
             },
             {
-              "time": "Before time itself",
-              "title": "THE FLOWER GAME",
-              "subtitle": "The Gardener and Winnower cycle the pattern",
-              "seasonAdded": 16,
-              "style": "major",
-              "sources": [
-                  "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-              ]
+                "time": "Before time itself",
+                "title": "THE FLOWER GAME",
+                "subtitle": "The Gardener and Winnower cycle the pattern",
+                "seasonAdded": 16,
+                "style": "major",
+                "sources": [
+                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                ]
+            },
+            {
+                "time": "Before time itself",
+                "title": "THE FLOWER GAME",
+                "subtitle": "The Gardener and Winnower cycle the pattern",
+                "seasonAdded": 16,
+                "style": "major",
+                "sources": [
+                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                ]
             }
         ]
     }

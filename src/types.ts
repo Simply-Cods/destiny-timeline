@@ -1,4 +1,11 @@
-export const styles = ["major", "minor", "empty", "filler", "fadeIn", "fadeOut"] as const;
+export const styles = [
+    "major",
+    "minor",
+    "empty",
+    "filler",
+    "fadeIn",
+    "fadeOut",
+] as const;
 export type Style = typeof styles[number];
 
 export interface TimelineData {
@@ -16,5 +23,5 @@ export interface TimelineDefinition {
     debugName: string;
     // index: number;
     contentDirection: string;
-    children: TimelineData[]
+    children: TimelineData[];
 }

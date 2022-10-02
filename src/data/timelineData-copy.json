@@ -194,7 +194,6 @@
         "timelineIndex": 0,
         "indexOverride": -1,
         "style": "major",
-        "sources": [
-        ]
+        "sources": []
     }
 ]

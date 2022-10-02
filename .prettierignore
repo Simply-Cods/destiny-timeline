@@ -1,0 +1,16 @@
+node_modules/
+
+## build destinations
+/public/
+.cache/
+build/
+dist/
+
+## auto generated
+src/gatsby-types.d.ts
+src/components/image-gen
+
+## logs and temporary files
+*.log
+*.tmp
+
