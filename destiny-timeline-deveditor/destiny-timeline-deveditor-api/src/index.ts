@@ -2,6 +2,7 @@ import express, {Request, Response, NextFunction} from "express";
 import dotenv from 'dotenv'
 import fs from 'fs/promises'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 
 class HttpException extends Error {
     status: number;
@@ -17,6 +18,8 @@ const app = express();
 const port = process.env.PORT;
 const dataPath = '../../src/data/'
 
+const jsonParser = bodyParser.json()
+
 app.use(cors())
 
 app.use((req: Request, _res: Response, next: NextFunction) => {
@@ -29,6 +32,17 @@ app.get('/timelines', (_req: Request, res: Response, next: NextFunction) => {
     .then(data => {
         console.log(`✔️ [destiny-timeline-deveditor-api]: Success`)
         res.status(200).send(data)
+    })
+    .catch(error => {
+        next(new HttpException(500, JSON.stringify(error)))
+    })
+})
+
+app.post('/timelines', jsonParser, (req: Request, res: Response, next: NextFunction) => {
+    fs.writeFile(dataPath + "timelineData.json", JSON.stringify(req.body))
+    .then(() => {
+        console.log(`✔️ [destiny-timeline-deveditor-api]: Success`)
+        res.status(200).send()
     })
     .catch(error => {
         next(new HttpException(500, JSON.stringify(error)))

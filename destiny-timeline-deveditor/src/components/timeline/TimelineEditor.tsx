@@ -8,10 +8,12 @@ export default function Timeline() {
     const [data, setData] = useState<TimelineDefinition[]>([])
 
     useEffect(() => {
-        fetch('http://localhost:4001/timelines')
+        fetch('http://localhost:4001/timelines', {
+            method: "GET",
+            headers: {"Content-Type": "application/json"}
+        })
         .then(body => body.json())
         .then(data => {
-            console.log(data)
             setData(data)
         })
     }, [])
@@ -28,7 +30,7 @@ export default function Timeline() {
 
     return (
         <div>
-            <Controls setData={setData}/>
+            <Controls setData={setData} data={data} />
             <div className='timeline-editor--columns-container'>
                 {rows}
             </div>  

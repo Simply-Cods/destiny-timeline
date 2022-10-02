@@ -3,8 +3,10 @@ import {TimelineDefinition, TimelineData} from '../../../../src/types'
 
 export default function Controls({
     setData,
+    data,
 }: {
     setData: React.Dispatch<React.SetStateAction<TimelineDefinition[]>>;
+    data: TimelineDefinition[];
 }) {
     const defaultElement: TimelineData = {
         time: "",
@@ -21,6 +23,7 @@ export default function Controls({
             for (let i = 0; i < newData.length; i++) {
                 newData[i].children.push({...defaultElement})
             }
+            console.log(newData)
             return newData;
         })
     }
@@ -42,6 +45,21 @@ export default function Controls({
         })
     }
 
+    function save() {
+        fetch("http://localhost:4001/timelines", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        })
+        .then(res => {
+            if(res.ok) {
+                window.alert("Success");
+            } else {
+                window.alert(res.status);
+            }
+        })
+    }
+
     return (
         <div>
             <button
@@ -50,6 +68,9 @@ export default function Controls({
             <button
                 onClick={addColumn}
             >Add Column (timeline)</button>
+            <button
+                onClick={save}
+            >Save</button>
         </div>
     )
 }

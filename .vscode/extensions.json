@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "streetsidesoftware.code-spell-checker",
-        "Orta.vscode-jest"
+        "orta.vscode-jest",
+        "rangav.vscode-thunder-client"
     ]
 }
