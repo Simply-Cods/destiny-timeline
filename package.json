@@ -8,10 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "yarn generateImages && concurrently \"gatsby develop --verbose\" \"yarn typed-scss-modules src\"",
-    "start": "yarn develop",
-    "start:deveditor": "yarn --cwd \"./destiny-timeline-deveditor\" start",
-    "build": "yarn generateImages && gatsby build",
+    "build": "yarn generate:images && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
@@ -21,7 +18,17 @@
     "lint:prettier": "yarn prettier **/* --check",
     "fix": "run-s fix:*",
     "fix:prettier": "yarn prettier --write **/*",
-    "generateImages": "node image-generator.js"
+    "prepare": "husky install && yarn generate",
+    "generate": "run-p --aggregate-output generate:**",
+    "generate:images": "node image-generator.js",
+    "generate:scss.d.ts": "yarn typed-scss-modules src",
+    "generate:deveditor": "yarn --cwd \"./destiny-timeline-deveditor\" build",
+    "generate:deveditor:api": "yarn --cwd \"./destiny-timeline-deveditor/destiny-timeline-deveditor-api\" build",
+    "start": "run-p start:**",
+    "start:gatsby": "gatsby develop",
+    "start:scss.d.ts": "yarn typed-scss-modules src --watch --ignoreInitial",
+    "start:deveditor": "yarn --cwd \"./destiny-timeline-deveditor\" start",
+    "start:deveditor:api": "yarn --cwd \"./destiny-timeline-deveditor/destiny-timeline-deveditor-api\" serve"
   },
   "dependencies": {
     "@babel/core": "^7.19.1",

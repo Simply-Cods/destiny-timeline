@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn tsc",
-    "serve": "node dist",
-    "preserve": "yarn build"
+    "serve": "node dist"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
