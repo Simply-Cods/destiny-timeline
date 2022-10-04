@@ -16,7 +16,11 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "spellcheck": "yarn cspell **",
-    "lint:prettier": "yarn prettier --write **/*",
+    "lint": "run-s lint:*",
+    "lint:cspell": "yarn cspell **",
+    "lint:prettier": "yarn prettier **/* --check",
+    "fix": "run-s fix:*",
+    "fix:prettier": "yarn prettier --write **/*",
     "generateImages": "node image-generator.js"
   },
   "dependencies": {
@@ -43,6 +47,7 @@
     "@types/react-dom": "^18.0.6",
     "concurrently": "^7.4.0",
     "cspell": "^6.9.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
     "typed-scss-modules": "^6.6.0",
     "typescript": "^4.8.3"
