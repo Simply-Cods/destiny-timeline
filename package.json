@@ -11,8 +11,6 @@
     "build": "yarn generate:images && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit",
-    "spellcheck": "yarn cspell **",
     "lint": "run-s lint:*",
     "lint:cspell": "yarn cspell **",
     "lint:prettier": "yarn prettier **/* --check",
