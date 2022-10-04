@@ -3,5 +3,5 @@
 . "$(dirname -- "$0")/common.sh"
 
 files=$(git diff --cached --name-only)
-yarn cspell --no-summary $files
+yarn cspell --no-summary --no-must-find-files $files
 npx pretty-quick --staged
