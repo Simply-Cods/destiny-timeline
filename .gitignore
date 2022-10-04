@@ -9,6 +9,7 @@ dist/
 ## auto generated
 src/gatsby-types.d.ts
 src/components/image-gen
+**/*.module.scss.d.ts
 
 ## logs and temporary files
 *.log
