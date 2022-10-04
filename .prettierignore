@@ -34,3 +34,6 @@ yarn.lock
 ## unparsable files
 /src/images/
 .env
+
+## husky
+.husky/

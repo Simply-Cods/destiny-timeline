@@ -28,10 +28,12 @@
         "gatsby-config.ts",
         "package.json",
         ".gitignore",
+        ".prettierignore",
         "tsconfig.json",
         "typed-scss-modules.config.ts",
         "yarn.lock",
         ".vscode/extensions.json",
-        "/src/images"
+        "/src/images",
+        ".husky"
     ]
 }
