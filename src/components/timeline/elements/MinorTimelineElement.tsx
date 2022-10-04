@@ -9,7 +9,7 @@ import {
 import { TimelineData } from "../../../types";
 import { getLoreString } from "../../../helpers";
 import SeasonIcon from "../../image-gen/SeasonIcon";
-import * as styles from "./MinorTimelineElement..module.scss";
+import * as styles from "./MinorTimelineElement.module.scss";
 import clsx from "clsx";
 import { TimelineElementMetadata } from "../TimelineElement";
 
