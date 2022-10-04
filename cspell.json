@@ -32,7 +32,6 @@
         "typed-scss-modules.config.ts",
         "yarn.lock",
         ".vscode/extensions.json",
-        "/src/images",
-        "**/*.module.scss.d.ts"
+        "/src/images"
     ]
 }
