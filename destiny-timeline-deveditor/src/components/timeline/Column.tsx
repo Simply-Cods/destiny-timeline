@@ -1,7 +1,7 @@
 import React from "react";
-import {TimelineDefinition} from '../../../../src/types'
+import { TimelineDefinition } from "../../../../src/types";
 import Element from "./Element";
-import './Column.scss'
+import "./Column.scss";
 
 export default function Column({
     data,
@@ -11,12 +11,12 @@ export default function Column({
 }: {
     data: TimelineDefinition;
     timelineIndex: number;
-    setData: React.Dispatch<React.SetStateAction<TimelineDefinition[]>>
-    isDefault?: boolean
+    setData: React.Dispatch<React.SetStateAction<TimelineDefinition[]>>;
+    isDefault?: boolean;
 }) {
     const elements = data.children.map((element, i) => {
         return (
-            <Element 
+            <Element
                 key={i}
                 timelineIndex={timelineIndex}
                 elementIndex={i}
@@ -24,16 +24,13 @@ export default function Column({
                 setData={setData}
                 isOnDefault={isDefault}
             />
-        )
-    })
+        );
+    });
 
     return (
         <div>
             <h1 className="column--name">{data.debugName}</h1>
-            <div className="column--element-container">
-                {elements}
-            </div>
+            <div className="column--element-container">{elements}</div>
         </div>
-        
-    )
+    );
 }

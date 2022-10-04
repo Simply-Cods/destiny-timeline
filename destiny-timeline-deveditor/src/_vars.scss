@@ -1,5 +1,5 @@
 @mixin horizontal-space-children($spacing) {
-    > *{
+    > * {
         &:not(:last-child) {
             margin-right: $spacing;
         }
@@ -7,7 +7,7 @@
 }
 
 @mixin vertical-space-children($spacing) {
-    > *{
+    > * {
         &:not(:last-child) {
             margin-bottom: $spacing;
         }

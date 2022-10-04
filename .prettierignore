@@ -14,3 +14,23 @@ src/components/image-gen
 *.log
 *.tmp
 
+## Config files
+.prettierrc.json
+cspell.json
+gatsby-config.ts
+typed-scss-modules.config.ts
+tsconfig.json
+/config/
+.vscode/
+
+## Package files
+package.json
+yarn.lock
+
+## .igonre files
+.gitignore
+.prettierignore
+
+## unparsable files
+/src/images/
+.env

@@ -1,7 +1,7 @@
 import React from "react";
-import { TimelineData, TimelineDefinition } from '../../../../src/types'
+import { TimelineData, TimelineDefinition } from "../../../../src/types";
 import { nameof } from "../../helpers";
-import './Element.scss'
+import "./Element.scss";
 
 export default function Element({
     timelineData,
@@ -13,27 +13,26 @@ export default function Element({
     timelineData: TimelineData;
     timelineIndex: number;
     elementIndex: number;
-    setData: React.Dispatch<React.SetStateAction<TimelineDefinition[]>>
-    isOnDefault?: boolean
+    setData: React.Dispatch<React.SetStateAction<TimelineDefinition[]>>;
+    isOnDefault?: boolean;
 }) {
     function handleChange(event: any) {
-        setData(prevData => {
-            const newData = [...prevData]
+        setData((prevData) => {
+            const newData = [...prevData];
             newData[timelineIndex].children[elementIndex] = {
                 ...prevData[timelineIndex].children[elementIndex],
-                [event.target.name]: event.target.value
-            }
+                [event.target.name]: event.target.value,
+            };
             return newData;
-        })
+        });
     }
-    const isStylable = timelineData.style === "major" || timelineData.style === "minor"
-    
+    const isStylable =
+        timelineData.style === "major" || timelineData.style === "minor";
 
-    const hasTime = isOnDefault && isStylable
-    const hasTitle = timelineData.style === "major" && isStylable
-    const hasSubtitle = isStylable
-    const hasSeason = isStylable
-
+    const hasTime = isOnDefault && isStylable;
+    const hasTitle = timelineData.style === "major" && isStylable;
+    const hasSubtitle = isStylable;
+    const hasSeason = isStylable;
 
     return (
         <div className="timeline-element">
@@ -47,7 +46,7 @@ export default function Element({
                     name={nameof<TimelineData>("time")}
                 />
                 <label>Title:</label>
-                <input 
+                <input
                     type="text"
                     required={hasTitle}
                     value={timelineData.title}
@@ -87,5 +86,5 @@ export default function Element({
                 </select>
             </form>
         </div>
-    )
+    );
 }

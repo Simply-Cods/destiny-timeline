@@ -1,11 +1,8 @@
-import React from 'react';
-import TimelineEditor from './components/timeline/TimelineEditor';
-
+import React from "react";
+import TimelineEditor from "./components/timeline/TimelineEditor";
 
 function App() {
-  return (
-    <TimelineEditor />
-  );
+    return <TimelineEditor />;
 }
 
 export default App;

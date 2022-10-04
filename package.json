@@ -16,6 +16,7 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "spellcheck": "yarn cspell **",
+    "lint:prettier": "yarn prettier --write **/*",
     "generateImages": "node image-generator.js"
   },
   "dependencies": {

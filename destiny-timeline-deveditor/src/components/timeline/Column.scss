@@ -1,6 +1,6 @@
-@use '../../vars' as *;
+@use "../../vars" as *;
 
-.column--element-container{
+.column--element-container {
     margin-top: 5px;
     display: flex;
     flex-direction: column;
