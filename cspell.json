@@ -22,8 +22,8 @@
         }
     ],
     "allowCompoundWords": true,
+    "useGitignore": true,
     "ignorePaths": [
-        "public/",
         "cspell.json",
         "gatsby-config.ts",
         "package.json",
@@ -31,7 +31,8 @@
         "tsconfig.json",
         "typed-scss-modules.config.ts",
         "yarn.lock",
-        "yarn-error.log",
-        ".vscode/extensions.json"
+        ".vscode/extensions.json",
+        "/src/images",
+        "**/*.module.scss.d.ts"
     ]
 }
