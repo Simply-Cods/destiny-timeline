@@ -7,111 +7,85 @@ import { TimelineData, TimelineDefinition } from "../../types";
 
 export interface TimelineRendererProps {
     timelineData: TimelineData[];
-    timelines: TimelineDefinition[];
 }
 
-export default function TimelineRenderer(props: TimelineRendererProps) {
-    // copy the timelines to avoid side effects
-    let sortedTimelines = [...props.timelines];
-
-    if (sortedTimelines.length > 1) {
-        sortedTimelines = sortedTimelines.sort((a, b) => a.index - b.index);
-    }
-
-    const defaultTimeline = sortedTimelines.find((t) => t.index === 0)!;
-
-    // copy timeline elements
-    const elements = [...props.timelineData];
-
-    const elementsByTimeline: {
-        [timelineIndex: number]: { [elementIndex: number]: TimelineData };
-    } = {};
-
-    let maxIndex = 0;
-
-    elementsByTimeline[0] = {};
-    //populate default timeline
-    for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        if (element.timelineIndex === 0) {
-            elementsByTimeline[0][maxIndex] = element;
-            elements.splice(i, 1);
-            maxIndex++;
-            i--;
-        }
-    }
-
-    // populate additional timelines with index overrides
-    for (let i = 0; i < sortedTimelines.length; i++) {
-        const timeline = sortedTimelines[i];
-        if (timeline === defaultTimeline) {
-            continue;
-        }
-        elementsByTimeline[timeline.index] = {};
-        let lastIndex = -1;
-        for (let j = 0; j < elements.length; j++) {
-            const element = elements[j];
-            if (element.timelineIndex === timeline.index) {
-                if (element.indexOverride === -1) {
-                    lastIndex++;
-                } else if (element.indexOverride <= lastIndex) {
-                    throw new Error(
-                        `indexOverride: ${element.indexOverride} <= lastIndex: ${lastIndex} on ${timeline.debugName}`
-                    );
-                } else {
-                    lastIndex = element.indexOverride;
-                }
-                elementsByTimeline[timeline.index][lastIndex] = element;
-                elements.splice(j, 1);
-                maxIndex = lastIndex > maxIndex ? lastIndex : maxIndex;
-                j--;
-            }
-        }
-    }
-
-    const metadataByTimeline: {
-        [timelineIndex: number]: {
-            [elementIndex: number]: TimelineElementMetadata;
-        };
-    } = {};
-
+export default function TimelineRenderer({
+    timelines,
+    rowSpacing,
+    columnSpacing,
+}: {
+    timelines: TimelineDefinition[];
+    rowSpacing: number;
+    columnSpacing: number;
+}) {
+    const metadataByTimeline: TimelineElementMetadata[][] = [];
     const defaultMetadata: TimelineElementMetadata = {
-        nextMajor: true,
+        nextMajor: false,
     };
 
-    // generate metadata
-    for (let i = 0; i < sortedTimelines.length; i++) {
-        const timeline = sortedTimelines[i];
-        metadataByTimeline[timeline.index] = {};
-        for (let j = 0; j < maxIndex; j++) {
-            // apply default
-            metadataByTimeline[timeline.index][j] = { ...defaultMetadata };
+    // calculate metadata
+    // i - timeline
+    // j - timeline children
+    for (let i = 0; i < timelines.length; i++) {
+        const timeline = timelines[i];
+        metadataByTimeline.push([]);
+        for (let j = 0; j < timeline.children.length; j++) {
+            metadataByTimeline[i][j] = { ...defaultMetadata };
 
-            if (j > 0) {
-                const current = elementsByTimeline[timeline.index][j];
-                const previous = elementsByTimeline[timeline.index][j - 1];
+            if (j + 1 < timelines.length) {
+                const next = timeline.children[j + 1];
 
-                // determine connector style
-                metadataByTimeline[timeline.index][j - 1].nextMajor =
-                    current.style === "major";
+                if (next.style === "major")
+                    metadataByTimeline[i][j].nextMajor = true;
             }
         }
     }
+
+    // if(process.env.NODE_ENV === "development") {
+    //     const debugData: any[] = []
+
+    //     for(let i = 0; i < timelines.length; i++) {
+    //         debugData.push({})
+    //         for(let j = 0; j < timelines[i].children.length; j++) {
+    //             const timelineData = timelines[i].children[j];
+    //             const metadata = metadataByTimeline[i][j];
+
+    //             const data = `${timelineData.style} ${metadata.nextMajor}`
+    //             debugData[i] = {...debugData[i], [j]: data}
+    //         }
+    //     }
+
+    //     console.table(debugData)
+    // }
 
     const rows: JSX.Element[] = [];
 
-    for (let i = 0; i < maxIndex; i++) {
-        const data: TimelineData[] = [];
-        const meta: TimelineElementMetadata[] = [];
-        for (const timeline in elementsByTimeline) {
-            data.push(elementsByTimeline[timeline][i]);
-            meta.push(metadataByTimeline[timeline][i]);
+    // generate row elements
+    // i - row
+    // j - column (timeline)
+    for (let i = 0; i < timelines[0].children.length; i++) {
+        const rowData: TimelineData[] = [];
+        const rowMetadata: TimelineElementMetadata[] = [];
+        for (let j = 0; j < timelines.length; j++) {
+            const data = timelines[j].children[i];
+            rowData.push(data);
+
+            const metadata = metadataByTimeline[j][i];
+            rowMetadata.push(metadata);
         }
-        rows.push(<TimelineRow key={i} data={data} meta={meta} spacing={2} />);
+
+        rows.push(
+            <TimelineRow
+                key={i}
+                data={rowData}
+                meta={rowMetadata}
+                spacing={columnSpacing}
+            />
+        );
     }
 
     return (
-        <Grid container className={styles.container}>
+        <Grid container className={styles.container} spacing={rowSpacing}>
             {rows}
         </Grid>
     );

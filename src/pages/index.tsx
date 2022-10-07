@@ -1,18 +1,20 @@
 import React from "react";
 import type { HeadFC } from "gatsby";
-import timelineData from "../data/timelineData.json";
-import timelines from "../data/timelinesDefinition.json";
+import timelineDataImport from "../data/timelineData.json";
 import "./index.scss";
 import TimelineRenderer from "../components/timeline/TimelineRenderer";
 import Header from "../components/Header";
+import { TimelineDefinition } from "../types";
 
 const IndexPage = () => {
+    const timelineData = timelineDataImport as TimelineDefinition[];
     return (
         <>
             <Header />
             <TimelineRenderer
-                timelineData={timelineData}
-                timelines={timelines}
+                timelines={timelineData}
+                columnSpacing={2}
+                rowSpacing={2}
             />
         </>
     );
