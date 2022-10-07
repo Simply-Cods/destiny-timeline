@@ -22,7 +22,7 @@
     "generate:scss.d.ts": "yarn typed-scss-modules src",
     "generate:deveditor": "yarn --cwd \"./destiny-timeline-deveditor\" build",
     "generate:deveditor:api": "yarn --cwd \"./destiny-timeline-deveditor/destiny-timeline-deveditor-api\" build",
-    "start": "run-p start:**",
+    "start": "run-p -c start:**",
     "start:gatsby": "gatsby develop",
     "start:scss.d.ts": "yarn typed-scss-modules src --watch --ignoreInitial",
     "start:deveditor": "yarn --cwd \"./destiny-timeline-deveditor\" start",
