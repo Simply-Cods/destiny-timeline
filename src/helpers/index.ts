@@ -1,3 +1,5 @@
+import { useState, useEffect, useCallback, useDebugValue } from "react";
+
 export function getLoreString(url: string) {
     const ishtar = "https://www.ishtar-collective.net/entries/";
     const entry = url.substring(ishtar.length);
@@ -27,4 +29,40 @@ function capitalizeStringArr(str: string[]) {
     });
 
     return capitalizedArr.join(" ");
+}
+
+function preventDefault(ev: Event) {
+    if (ev.preventDefault) {
+        ev.preventDefault();
+    }
+    ev.returnValue = false;
+}
+
+function enableBodyScroll() {
+    document && document.removeEventListener("wheel", preventDefault, false);
+}
+
+function disableBodyScroll() {
+    document &&
+        document.addEventListener("wheel", preventDefault, {
+            passive: false,
+        });
+}
+
+export function usePreventBodyScroll() {
+    const [hidden, setHidden] = useState(false);
+
+    useEffect(() => {
+        hidden ? disableBodyScroll() : enableBodyScroll();
+
+        // cleanup function
+        return enableBodyScroll;
+    }, [hidden]);
+
+    const disableScroll = useCallback(() => setHidden(true), []);
+    const enableScroll = useCallback(() => setHidden(false), []);
+
+    useDebugValue(hidden);
+
+    return { disableScroll, enableScroll };
 }
