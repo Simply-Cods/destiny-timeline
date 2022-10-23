@@ -30,7 +30,16 @@ const config: GatsbyConfig = {
         "path": `${__dirname}/src/images`,
       },
     },
-  ]
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          'material icons',
+          'Lato\:400,700'
+        ],
+      },
+    },
+  ],
 };
 
 export default config;
