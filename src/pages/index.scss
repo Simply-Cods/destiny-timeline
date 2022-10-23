@@ -1,3 +1,20 @@
 body {
     background: slategray;
+    font-family: "Lato", sans-serif;
+}
+
+.material-icons {
+    font-family: "Material Icons";
+    font-size: 24px;
+}
+
+#paralax-background {
+    transition: background-position 500ms ease-in-out;
+
+    &::after {
+        transition: background-position 500ms ease-in-out;
+    }
+    &::before {
+        transition: background-position 500ms ease-in-out;
+    }
 }

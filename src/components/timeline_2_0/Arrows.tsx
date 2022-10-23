@@ -16,6 +16,7 @@ function Arrow({
             className={styles.arrow}
             style={{
                 opacity: disabled ? "0" : "1",
+                cursor: disabled ? "default" : "pointer",
             }}
             disabled={disabled}
             onClick={onClick}
@@ -46,7 +47,7 @@ export function LeftArrow() {
 
     return (
         <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-            Left
+            <span className="material-icons">arrow_back</span>
         </Arrow>
     );
 }
@@ -67,7 +68,7 @@ export function RightArrow() {
 
     return (
         <Arrow disabled={disabled} onClick={() => scrollNext()}>
-            Right
+            <span className="material-icons">arrow_forward</span>
         </Arrow>
     );
 }

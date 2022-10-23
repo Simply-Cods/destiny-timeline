@@ -1,3 +1,12 @@
 .timeline {
     padding: 0 30px;
 }
+
+.seperator::before {
+    content: "keyboard_double_arrow_right";
+    font-family: "Material Icons";
+    font-size: 48px;
+    position: relative;
+    top: calc(300px - 0.5rem);
+    color: white;
+}

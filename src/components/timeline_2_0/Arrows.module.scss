@@ -1,8 +1,16 @@
 .arrow {
-    cursor: pointer;
     user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     right: 1%;
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+    align-self: center;
+    border-radius: 50%;
+    border-width: 0;
+    padding: 0;
+    transition: opacity ease-out 250ms;
 }
