@@ -7,3 +7,4 @@ quria
 dreadnought
 houseofwolves
 riseofiron
+grimoire
