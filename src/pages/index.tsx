@@ -4,18 +4,20 @@ import timelineDataImport from "../data/timelineData.json";
 import "./index.scss";
 import TimelineRenderer from "../components/timeline/TimelineRenderer";
 import Header from "../components/Header";
-import { TimelineDefinition } from "../types";
+import { TimelineCard, TimelineDefinition } from "../types";
+import Timeline from "../components/timeline_2_0/Timeline";
 
 const IndexPage = () => {
-    const timelineData = timelineDataImport as TimelineDefinition[];
+    const timelineData = timelineDataImport as TimelineCard[];
     return (
         <>
             <Header />
-            <TimelineRenderer
+            {/* <TimelineRenderer
                 timelines={timelineData}
                 columnSpacing={2}
                 rowSpacing={2}
-            />
+            /> */}
+            <Timeline timelineCards={timelineData} />
         </>
     );
 };

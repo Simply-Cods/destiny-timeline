@@ -1,267 +1,55 @@
 [
     {
-        "contentDirection": "",
-        "debugName": "before",
-        "children": [
+        "time": "Beyond time itself",
+        "timelineEntries": [
             {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "empty",
+                "title": "The flower game",
+                "description": "The Gardener and Winnower play a game across an infinite two dimensional grid of flowers",
                 "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                    {
+                        "displayName": "Unveiling - The Flower Game",
+                        "type": "book",
+                        "link": "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                    }
                 ]
-            },
-            {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "major",
-                "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-                ]
-            },
-            {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "empty",
-                "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-                ]
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
             }
         ]
     },
     {
-        "contentDirection": "",
-        "debugName": "default",
-        "children": [
+        "time": "T = 0",
+        "timelineEntries": [
             {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "major",
+                "title": "Birth of the Cosmos",
+                "description": "The Gardener and Winnower enter the universe as Paracausal forces",
                 "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                    {
+                        "displayName": "Unveiling - T = 0",
+                        "type": "book",
+                        "link": "https://www.ishtar-collective.net/entries/t-0#book-unveiling"
+                    }
                 ]
             },
             {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "major",
-                "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-                ]
-            },
-            {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "major",
-                "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-                ]
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
+                "description": "The Vex are created"
             }
         ]
     },
     {
-        "contentDirection": "",
-        "debugName": "after",
-        "children": [
+        "time": "T = 0",
+        "timelineEntries": [
             {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "empty",
+                "title": "Birth of the Cosmos",
+                "description": "The Gardener and Winnower enter the universe as Paracausal forces",
                 "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
+                    {
+                        "displayName": "Unveiling - T = 0",
+                        "type": "book",
+                        "link": "https://www.ishtar-collective.net/entries/t-0#book-unveiling"
+                    }
                 ]
             },
             {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "major",
-                "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-                ]
-            },
-            {
-                "time": "Before time itself",
-                "title": "THE FLOWER GAME",
-                "subtitle": "The Gardener and Winnower cycle the pattern",
-                "seasonAdded": 16,
-                "style": "major",
-                "sources": [
-                    "https://www.ishtar-collective.net/entries/the-flower-game#book-unveiling"
-                ]
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            }
-        ]
-    },
-    {
-        "contentDirection": "",
-        "debugName": "new timeline",
-        "children": [
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
-            },
-            {
-                "time": "",
-                "title": "",
-                "subtitle": "",
-                "seasonAdded": 0,
-                "style": "empty",
-                "sources": []
+                "description": "The Vex are created"
             }
         ]
     }
